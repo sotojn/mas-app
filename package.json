@@ -1,0 +1,11 @@
+{
+  "name": "mas-app",
+  "packageManager": "yarn@4.3.1",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "echo We will have a start soon",
+    "build": "echo We will have a start soon"
+  }
+}
