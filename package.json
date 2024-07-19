@@ -1,11 +1,26 @@
 {
   "name": "mas-app",
   "packageManager": "yarn@4.3.1",
+  "type": "module",
   "workspaces": [
     "packages/*"
   ],
+  "main": "dist/server.js",
   "scripts": {
-    "start": "echo We will have a start soon",
-    "build": "echo We will have a start soon"
+    "setup": "yarn install && yarn build && yarn build:ui",
+    "start": "node dist/server.js",
+    "build": "tsc --build",
+    "build:ui": "yarn workspace mas-ui build"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
+    "eslint": "^9.7.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.11",
+    "ts-node": "^10.9.2"
   }
 }
