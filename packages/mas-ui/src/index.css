@@ -25,6 +25,8 @@ button {
   margin: 10px;
   padding: 10px 20px;
   font-size: 16px;
+  color: blueviolet;
+  background-image: url('./paper.jpg');
 }
 
 div {
