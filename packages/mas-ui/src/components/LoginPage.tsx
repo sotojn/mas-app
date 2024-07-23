@@ -14,7 +14,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Login Page</h1>
+      <h1>Login Page Hello</h1>
       <button onClick={() => handleLogin('player')}>Login as Player</button>
       <button onClick={() => handleLogin('admin')}>Login as Admin</button>
     </div>
