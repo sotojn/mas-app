@@ -1,0 +1,49 @@
+# Use postgres/example user/password credentials
+version: '3.9'
+
+services:
+  mas-api:
+    depends_on:
+      - db
+    build:
+      context: .
+    scale: 1
+    ports:
+      - "5080:5080"
+    networks:
+      - mas-cluster
+  # mas-ui:
+  #   depends_on:
+  #     - mas-api
+  #   build:
+  #     context: .
+  #   scale: 1
+  #   command: ["yarn", "start:ui"]
+  #   ports:
+  #     - "3000:3000"
+  #   networks:
+  #     - mas-cluster
+  db:
+    image: postgres
+    restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD: massword
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_DB: testdb
+    volumes:
+      - ./postgress-data:/var/lib/postgresql/data
+    networks:
+      - mas-cluster
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - mas-cluster
+
+networks:
+  mas-cluster:
