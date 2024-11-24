@@ -1,6 +1,5 @@
-import React from 'react';
 
-const AdminHub: React.FC = () => {
+const AdminHub = () => {
   return (
     <div>
       <h1>Admin Hub</h1>
