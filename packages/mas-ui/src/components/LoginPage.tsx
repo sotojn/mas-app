@@ -1,14 +1,13 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const LoginPage: React.FC = () => {
-  const history = useNavigate();
+const LoginPage = () => {
+  const navigate = useNavigate();
 
   const handleLogin = (role: string) => {
     if (role === 'admin') {
-      history('/admin-hub');
+      navigate('/admin-hub');
     } else {
-      history('/player-hub');
+      navigate('/player-hub');
     }
   };
 

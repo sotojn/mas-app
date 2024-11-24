@@ -2,7 +2,7 @@
 version: '3.9'
 
 services:
-  mas-api:
+  api:
     depends_on:
       - db
     build:
@@ -12,7 +12,7 @@ services:
       - "5080:5080"
     networks:
       - mas-cluster
-  # mas-ui:
+  # ui:
   #   depends_on:
   #     - mas-api
   #   build:

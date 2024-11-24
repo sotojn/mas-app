@@ -1,6 +1,4 @@
-import React from 'react';
-
-const PlayerHub: React.FC = () => {
+const PlayerHub = () => {
   return (
     <div>
       <h1>Player Hub</h1>
@@ -9,3 +7,4 @@ const PlayerHub: React.FC = () => {
 };
 
 export default PlayerHub;
+
